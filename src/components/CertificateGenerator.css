@@ -192,7 +192,11 @@ tr{
   font-size: 11px;
   margin: 0px;
 }
-
+.certificate-dateofbirth{
+  margin-top: 740px;
+  margin-right: 390px;
+  font-size: 14px;
+}
 @media (max-width: 768px) {
   .container {
     width: 800px;

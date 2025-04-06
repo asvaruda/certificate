@@ -180,7 +180,7 @@ import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import React, { useRef, useState } from "react";
 import "../components/CertificateGenerator.css";
-import certificateImg from "./assets/certificate-fi.png";
+import certificateImg from "./assets/new-certificate.png";
 
 const CertificateGenerator = () => {
   const [details, setDetails] = useState({
@@ -195,6 +195,7 @@ const CertificateGenerator = () => {
     grade: "",
     certificateNo: "",
     dateOfexam: "",
+    dateOfBirth: "",
   });
   const certificateRef = useRef();
 
@@ -234,6 +235,7 @@ const CertificateGenerator = () => {
       grade,
       certificateNo,
       dateOfexam,
+      dateOfBirth,
     } = details;
     return (
       name &&
@@ -245,7 +247,8 @@ const CertificateGenerator = () => {
       dateOfIssue &&
       grade &&
       certificateNo &&
-      dateOfexam
+      dateOfexam &&
+      dateOfBirth
     );
   };
   const validateFormMarks = () => {
@@ -272,6 +275,7 @@ const CertificateGenerator = () => {
       });
       pdf.addImage(imgData, "PNG", 0, 0, 595, 842);
       pdf.save(`${details.name}_certificate.pdf`);
+      window.location.reload();
     });
   };
 
@@ -555,6 +559,18 @@ const CertificateGenerator = () => {
               />
             </label>
           </tr>
+          <tr>
+          <label className="label">
+              Date Of  Birth :
+              <input
+                className="input"
+                type="date"
+                name="dateOfBirth"
+                value={details.dateOfBirth}
+                onChange={handleChange}
+              />
+            </label>
+          </tr>
         </table>
       </form>
 
@@ -650,6 +666,9 @@ const CertificateGenerator = () => {
           <div className="certificate-text-certificateNo">
             {details.certificateNo}
           </div>
+        </div>
+        <div className="certificate-content">
+          <div className="certificate-dateofbirth ">{details.dateOfBirth}</div>
         </div>
       </div>
 
