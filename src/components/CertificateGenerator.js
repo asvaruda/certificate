@@ -181,7 +181,6 @@ import jsPDF from "jspdf";
 import React, { useRef, useState } from "react";
 import "../components/CertificateGenerator.css";
 import certificateImg from "./assets/new-certificate.png";
-import Navigation from "./Navigation";
 
 const CertificateGenerator = () => {
   const [details, setDetails] = useState({
