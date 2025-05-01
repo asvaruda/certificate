@@ -180,7 +180,7 @@ import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import React, { useRef, useState } from "react";
 import "../components/CertificateGenerator.css";
-import certificateImg from "./assets/new-certificate.png";
+import certificateImg from "./assets/new-certificate1.png";
 
 const CertificateGenerator = () => {
   const [details, setDetails] = useState({
