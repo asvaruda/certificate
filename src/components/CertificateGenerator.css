@@ -207,3 +207,16 @@ tr{
     margin-bottom: 0px;
   }
 }
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+.txt-nav{
+  color: blue;
+  cursor: pointer;
+}
+.txt-nav:hover{
+  color: rgb(113, 113, 227);
+}
