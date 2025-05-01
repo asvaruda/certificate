@@ -181,6 +181,8 @@ import jsPDF from "jspdf";
 import React, { useRef, useState } from "react";
 import "../components/CertificateGenerator.css";
 import certificateImg from "./assets/new-certificate.png";
+import Navigation from "./Navigation";
+
 
 const CertificateGenerator = () => {
   const [details, setDetails] = useState({
@@ -196,6 +198,7 @@ const CertificateGenerator = () => {
     certificateNo: "",
     dateOfexam: "",
     dateOfBirth: "",
+    subjectcode :""
   });
   const certificateRef = useRef();
 
@@ -236,6 +239,7 @@ const CertificateGenerator = () => {
       certificateNo,
       dateOfexam,
       dateOfBirth,
+      subjectcode
     } = details;
     return (
       name &&
@@ -248,7 +252,8 @@ const CertificateGenerator = () => {
       grade &&
       certificateNo &&
       dateOfexam &&
-      dateOfBirth
+      dateOfBirth &&
+      subjectcode
     );
   };
   const validateFormMarks = () => {
@@ -572,6 +577,34 @@ const CertificateGenerator = () => {
                 onChange={handleChange}
               />
             </label>
+            <label className="label">
+              Subject Code:
+              {/* <input
+          type="text"
+            className="input"
+            name="grade"
+            value={details.grade}
+            onChange={handleChange}
+          /> */}
+              <select
+                className="input"
+                name="subjectcode"
+                value={details.subjectcode}
+                onChange={handleChange}
+              >
+                <option>Select Subject Code</option>
+                <option>CDB01</option>
+                <option>CMC02</option>
+                <option>CMI03</option>
+                <option>CPD04</option>
+                <option>CTY05</option>
+                <option>PTS06</option>
+                <option>MAK07</option>
+                <option>MAS09</option>
+                <option>MAT08</option>
+                <option>FITG10</option>
+              </select>
+            </label>
           </tr>
         </table>
       </form>
@@ -670,7 +703,12 @@ const CertificateGenerator = () => {
           </div>
         </div>
         <div className="certificate-content">
-          <div className="certificate-dateofbirth ">{details.dateOfBirth}</div>
+          <div className="certificate-dateofbirth ">{details.dateOfBirth && formatDate(details.dateOfBirth)}</div>
+        </div>
+        <div className="certificate-content">
+          <div className="certificate-issue-subcode  common-style">
+            {details.subjectcode}
+          </div>
         </div>
       </div>
 

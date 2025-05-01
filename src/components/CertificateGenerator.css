@@ -184,7 +184,7 @@ tr{
 }
 .certificate-text-certificateNo{
   font-size: 18px;
-  margin-top: 139px;
+  margin-top: 121px;
   margin-right: 220px;
   font-weight: 400;
 }
@@ -196,6 +196,12 @@ tr{
   margin-top: 740px;
   margin-right: 390px;
   font-size: 14px;
+}
+.certificate-issue-subcode {
+  margin-top: 157px;
+  margin-right: 240px;
+  font-size: 17px;
+  font-weight: 500;
 }
 @media (max-width: 768px) {
   .container {
